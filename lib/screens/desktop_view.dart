@@ -11,6 +11,20 @@ class _DesktopViewState extends State<DesktopView> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    return Container();
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(
+            height: screenSize.height,
+            width: screenSize.width,
+            child: Row(
+              children: [
+                
+              ],
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
