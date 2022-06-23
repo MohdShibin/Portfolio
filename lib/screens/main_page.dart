@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      extendBodyBehindAppBar: true,
+      backgroundColor: const Color(0xffEDF1FD),
       appBar: PreferredSize(
           preferredSize: Size(screenSize.width,1000),
           child:Padding(
@@ -42,7 +42,26 @@ class _HomePageState extends State<HomePage> {
                 ),
                 InkWell(
                   onTap: (){},
-                  child: Text('HIRE ME'),
+                  child: Container(
+                    child: Text(
+                      "HIRE ME",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    padding: EdgeInsets.symmetric(horizontal: 16.0,vertical: 10.0),
+
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      gradient: LinearGradient(
+                        colors: const <Color> [
+                          Color(0xff7b4397),
+                          Color(0xffdc2430),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
