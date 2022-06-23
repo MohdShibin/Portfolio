@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/utils/styles.dart';
 import '../screens/desktop_view.dart';
 import '../screens/mobile_view.dart';
-
+import '../Reusable components/gradient_button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,55 +18,42 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: const Color(0xffEDF1FD),
       appBar: PreferredSize(
-          preferredSize: Size(screenSize.width,1000),
-          child:Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20,horizontal: 30),
+          preferredSize: Size(screenSize.width, 1000),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             child: Row(
               children: [
-                Text('S'),
+                Text('<sbnvgl/>'),
                 Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      MenuButton(title: 'HOME',),
+                      MenuButton(
+                        title: 'HOME',
+                      ),
                       SizedBox(width: screenSize.width / 25),
-                      MenuButton(title: 'ABOUT ME',),
+                      MenuButton(
+                        title: 'ABOUT',
+                      ),
                       SizedBox(width: screenSize.width / 25),
-                      MenuButton(title: 'SKILLS',),
+                      MenuButton(
+                        title: 'SKILLS',
+                      ),
                       SizedBox(width: screenSize.width / 25),
-                      MenuButton(title: 'PROJECTS',),
+                      MenuButton(
+                        title: 'PROJECTS',
+                      ),
                       SizedBox(width: screenSize.width / 25),
-                      MenuButton(title: 'CONTACT ME',),
+                      MenuButton(
+                        title: 'CONTACT',
+                      ),
                     ],
                   ),
                 ),
-                InkWell(
-                  onTap: (){},
-                  child: Container(
-                    child: Text(
-                      "HIRE ME",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    padding: EdgeInsets.symmetric(horizontal: 16.0,vertical: 10.0),
-
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      gradient: LinearGradient(
-                        colors: const <Color> [
-                          Color(0xff7b4397),
-                          Color(0xffdc2430),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+                GradientButton(title: 'HIRE ME', onTap: () {}),
               ],
             ),
-          )
-      ),
+          )),
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           if (constraints.maxWidth > 715.0) {
@@ -90,9 +77,9 @@ class MenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: () {},
       child: Text(
-          title,
+        title,
         style: kMenuTextStyle,
       ),
     );
