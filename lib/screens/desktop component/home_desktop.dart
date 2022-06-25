@@ -87,7 +87,7 @@ class HomeDesktop extends StatelessWidget {
             clipBehavior: Clip.hardEdge,
             children: [
               SizedBox(
-                width: 400,
+                width: 480,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -107,9 +107,9 @@ class HomeDesktop extends StatelessWidget {
               ),
               Center(
                 child: SizedBox(
-                  width: 420,
-                  height: 420,
-                  child: Image.asset('portfolioImg.png'),
+                  width: 480,
+                  height: 480,
+                  child: Image.asset('portfolioImg.png',fit: BoxFit.fitHeight),
                 ),
               ),
             ],

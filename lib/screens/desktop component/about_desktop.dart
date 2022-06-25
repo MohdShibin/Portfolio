@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../Reusable components/gradient_button.dart';
 
 class AboutDesktop extends StatelessWidget {
   const AboutDesktop({Key? key}) : super(key: key);
@@ -14,34 +15,37 @@ class AboutDesktop extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
+            flex: 3,
             child: SizedBox(
               width: 420,
               height: 420,
-              child: Image.asset('aboutImg.png'),
+              child: Image.asset('aboutImg.png',fit: BoxFit.fitHeight),
             ),
           ),
           Expanded(
+            flex: 4,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text(
-                  'WHO AM I ?',
+                  'LET ME\nTELL YOU\nWHO AM I!',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 32.0,
+                    letterSpacing: 1.5,
                   ),
                 ),
                 SizedBox(
                   height: 22.0,
                 ),
                 Text(
-                  'I am Shibin, A Coding Enthusiast\nPursuing B.tech Computer Science and Engineering\nWith Honours in Machine Learning.',
+                  'I am Shibin,\nPursuing B.tech Computer Science and Engineering\nWith Honours in Machine Learning.\n\n',
                   style: TextStyle(
-                    fontSize: 20.0,
+                    fontSize: 18.0,
                   ),
-                  
                 ),
+                GradientButton(title: 'Download CV', onTap: (){}),
               ],
             ),
           ),
