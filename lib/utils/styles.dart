@@ -10,3 +10,9 @@ TextStyle kNameTextStyle = GoogleFonts.lato(
   fontWeight: FontWeight.bold,
   fontSize: 50,
 );
+
+TextStyle kHeadingTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontSize: 32.0,
+  letterSpacing: 1.5,
+);

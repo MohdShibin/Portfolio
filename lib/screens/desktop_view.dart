@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/screens/desktop%20component/skills_desktop.dart';
 import '../screens/desktop component/home_desktop.dart';
 import '../screens/desktop component/about_desktop.dart';
 
@@ -17,9 +18,10 @@ class _DesktopViewState extends State<DesktopView> {
         screenSize.height > 600 ? screenSize.height * 0.93 : 600.0;
     return SingleChildScrollView(
       child: Column(
-        children: const [
+        children: [
           HomeDesktop(),
           AboutDesktop(),
+          SkillsDesktop(),
         ],
       ),
     );

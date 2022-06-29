@@ -3,6 +3,7 @@ import 'package:portfolio/utils/styles.dart';
 import '../screens/desktop_view.dart';
 import '../screens/mobile_view.dart';
 import '../Reusable components/gradient_button.dart';
+import '../utils/constants.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: const Color(0xffEDF1FD),
+      backgroundColor: kPrimaryColor,
       appBar: PreferredSize(
           preferredSize: Size(screenSize.width, 1000),
           child: Padding(

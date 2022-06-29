@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../utils/styles.dart';
+import '../../utils/constants.dart';
 
 class HomeDesktop extends StatelessWidget {
   const HomeDesktop({Key? key}) : super(key: key);
@@ -93,14 +94,11 @@ class HomeDesktop extends StatelessWidget {
                   children: [
                     Container(
                       width: 80,
-                      //color: const Color(0xffeeeeee),
-                      color: const Color(0xffDBE1F1),
+                      color: kSecondaryColor,
                     ),
                     Container(
                       width: 80,
-                      //color: const Color(0xff0F044C),
-                      //color: const Color(0xfff1f1f1),
-                      color: const Color(0xffDBE1F1),
+                      color: kSecondaryColor,
                     ),
                   ],
                 ),
@@ -109,18 +107,15 @@ class HomeDesktop extends StatelessWidget {
                 child: SizedBox(
                   width: 480,
                   height: 480,
-                  child: Image.asset('portfolioImg.png',fit: BoxFit.fitHeight),
+                  child: Image.asset('portfolioImg.png', fit: BoxFit.fitHeight),
                 ),
               ),
             ],
           ),
           Expanded(
             flex: 1,
-            child: Container(
+            child: SizedBox(
               height: screenSize.height * 0.93,
-              //color: const Color(0xfff1f1f1),
-              //color: const Color(0xff1F2233),
-              color: const Color(0xffEDF1FD),
             ),
           ),
         ],
