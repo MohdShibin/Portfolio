@@ -88,7 +88,7 @@ class HomeDesktop extends StatelessWidget {
             clipBehavior: Clip.hardEdge,
             children: [
               SizedBox(
-                width: 480,
+                width: 420,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -105,9 +105,9 @@ class HomeDesktop extends StatelessWidget {
               ),
               Center(
                 child: SizedBox(
-                  width: 480,
-                  height: 480,
-                  child: Image.asset('portfolioImg.png', fit: BoxFit.fitHeight),
+                  width: 420,
+                  height: 420,
+                  child: Image.asset('portfolioImg.png', fit: BoxFit.contain),
                 ),
               ),
             ],
@@ -125,8 +125,6 @@ class HomeDesktop extends StatelessWidget {
 }
 
 Widget buildSocialButtons() => Container(
-      //color: const Color(0xff1F2233),
-      //color: const Color(0xff0F044C),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -148,7 +146,8 @@ Widget buildSocialButton({
   required VoidCallback onClicked,
 }) =>
     InkWell(
-      child: SizedBox(
+      child: Container(
+        color: kSecondaryColor,
         width: 64,
         height: 64,
         child: Center(
