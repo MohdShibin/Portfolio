@@ -16,9 +16,6 @@ class SkillGridTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-    var screenHeight =
-        screenSize.height > 600 ? screenSize.height * 0.92 : 600.0;
     return Container(
       width: 180.0,
       height: 200.0,
@@ -46,6 +43,9 @@ class SkillGridTile extends StatelessWidget {
               fontSize: 18.0,
               fontWeight: FontWeight.bold,
             ),
+          ),
+          SizedBox(
+            height: 10.0,
           ),
           Text(
             subTitle!,

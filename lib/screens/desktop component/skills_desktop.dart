@@ -39,22 +39,22 @@ class SkillsDesktop extends StatelessWidget {
                 children: [
                   SkillGridTile(
                       imgLoc: 'web.webp',
-                      title: 'TITLE\n',
+                      title: 'TITLE',
                       subTitle: 'subtitle',
                       starCount: '* * * *'),
                   SkillGridTile(
                       imgLoc: 'web.webp',
-                      title: 'TITLE\n',
+                      title: 'TITLE',
                       subTitle: 'subtitle',
                       starCount: '* * * *'),
                   SkillGridTile(
                       imgLoc: 'web.webp',
-                      title: 'TITLE\n',
+                      title: 'TITLE',
                       subTitle: 'subtitle',
                       starCount: '* * * *'),
                   SkillGridTile(
                       imgLoc: 'web.webp',
-                      title: 'TITLE\n',
+                      title: 'TITLE',
                       subTitle: 'subtitle',
                       starCount: '* * * *'),
                 ],
@@ -67,21 +67,27 @@ class SkillsDesktop extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  SizedBox(
+                    width: 40.0,
+                  ),
                   SkillGridTile(
                       imgLoc: 'web.webp',
-                      title: 'TITLE\n',
+                      title: 'TITLE',
                       subTitle: 'subtitle',
                       starCount: '* * * *'),
                   SkillGridTile(
                       imgLoc: 'web.webp',
-                      title: 'TITLE\n',
+                      title: 'TITLE',
                       subTitle: 'subtitle',
                       starCount: '* * * *'),
                   SkillGridTile(
                       imgLoc: 'web.webp',
-                      title: 'TITLE\n',
+                      title: 'TITLE',
                       subTitle: 'subtitle',
                       starCount: '* * * *'),
+                  SizedBox(
+                    width: 40.0,
+                  ),
                 ],
               ),
             ),
