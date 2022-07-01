@@ -9,7 +9,7 @@ class AboutDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight =
-        screenSize.height > 600 ? screenSize.height * 0.93 : 600.0;
+        screenSize.height > 800 ? screenSize.height * 0.93 : 800.0;
     return SizedBox(
       height: screenHeight,
       width: screenSize.width,

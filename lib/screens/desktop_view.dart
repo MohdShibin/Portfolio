@@ -16,14 +16,21 @@ class _DesktopViewState extends State<DesktopView> {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight =
         screenSize.height > 600 ? screenSize.height * 0.93 : 600.0;
-    return SingleChildScrollView(
-      child: Column(
-        children: [
+    // return SingleChildScrollView(
+    //   child: Column(
+    //     children: [
+    //       HomeDesktop(),
+    //       AboutDesktop(),
+    //       SkillsDesktop(),
+    //     ],
+    //   ),
+    // );
+    return ListView(
+      children: [
           HomeDesktop(),
           AboutDesktop(),
           SkillsDesktop(),
-        ],
-      ),
+      ],
     );
   }
 }
