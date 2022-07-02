@@ -18,7 +18,7 @@ class SkillGridTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 180.0,
-      height: 200.0,
+      height: 210.0,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
         color: kPrimaryColor,
@@ -33,12 +33,19 @@ class SkillGridTile extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
+            height: 5.0,
+          ),
+          SizedBox(
             child: Image.asset(imgLoc!),
-            height: 100,
-            width: 100,
+            height: 120,
+            width: 120,
+          ),
+          SizedBox(
+            height: 5.0,
           ),
           Text(
             title!,
+            overflow: TextOverflow.ellipsis,
             style: TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.bold,
