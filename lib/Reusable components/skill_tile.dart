@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import '../utils/constants.dart';
 
-class SkillGridTile extends StatelessWidget {
+class SkillTile extends StatelessWidget {
   final String? imgLoc;
   final String? title;
   final String? subTitle;
   final String? starCount;
 
-  const SkillGridTile({
+  const SkillTile({
     @required this.imgLoc,
     @required this.title,
     @required this.subTitle,
