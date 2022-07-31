@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/screens/desktop%20component/contact_desktop.dart';
 import 'package:portfolio/screens/desktop%20component/project_desktop.dart';
 import 'package:portfolio/screens/desktop%20component/skills_desktop.dart';
 import '../screens/desktop component/home_desktop.dart';
@@ -32,6 +33,7 @@ class _DesktopViewState extends State<DesktopView> {
           AboutDesktop(),
           SkillsDesktop(),
           ProjectDesktop(),
+          ContactDesktop(),
       ],
     );
   }

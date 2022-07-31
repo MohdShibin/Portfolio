@@ -3,33 +3,6 @@ import '../../utils/styles.dart';
 import '../../Reusable components/skill_tile.dart';
 
 class SkillsDesktop extends StatelessWidget {
-  List skillItem = const <Widget>[
-    SkillTile(
-      imgLoc: 'coding.jpg',
-      title: 'CODING',
-      subTitle: 'subtitle',
-      starCount: '* * * *',
-    ),
-    SkillTile(
-      imgLoc: 'Flutter.jpg',
-      title: 'FLUTTER',
-      subTitle: 'subtitle',
-      starCount: '* * * *',
-    ),
-    SkillTile(
-      imgLoc: 'Web.jpg',
-      title: 'WEB',
-      subTitle: 'subtitle',
-      starCount: '* * * *',
-    ),
-    SkillTile(
-      imgLoc: 'uiux.jpg',
-      title: 'UI/UX',
-      subTitle: 'subtitle',
-      starCount: '* * * *',
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -58,25 +31,25 @@ class SkillsDesktop extends StatelessWidget {
                     imgLoc: 'coding.jpg',
                     title: 'CODING',
                     subTitle: 'subtitle',
-                    starCount: '* * * *',
+                    starCount: '*  *  *  *',
                   ),
                   SkillTile(
                     imgLoc: 'Flutter.jpg',
                     title: 'FLUTTER',
                     subTitle: 'subtitle',
-                    starCount: '* * * *',
+                    starCount: '*  *  *  *',
                   ),
                   SkillTile(
                     imgLoc: 'Web.jpg',
                     title: 'WEB',
                     subTitle: 'subtitle',
-                    starCount: '* * * *',
+                    starCount: '*  *  *  *',
                   ),
                   SkillTile(
                     imgLoc: 'uiux.jpg',
                     title: 'UI/UX',
                     subTitle: 'subtitle',
-                    starCount: '* * * *',
+                    starCount: '*  *  *  *',
                   ),
                 ],
               ),
