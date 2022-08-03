@@ -9,7 +9,7 @@ class ContactDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Container(
-      height: 400.0,
+      height: 300.0,
       width: screenSize.width,
       padding: EdgeInsets.symmetric(
         horizontal: screenSize.width / 8.0,
@@ -23,15 +23,25 @@ class ContactDesktop extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ContactButton(
+                icon: Icons.mail,
+                onTap: () {},
+              ),
+              ContactButton(
                 icon: FontAwesomeIcons.linkedin,
-                onTap: (){},
+                onTap: () {},
               ),
               ContactButton(
                 icon: FontAwesomeIcons.github,
-                onTap: (){},
+                onTap: () {},
+              ),
+              ContactButton(
+                icon: FontAwesomeIcons.googlePlay,
+                onTap: () {},
               ),
             ],
           ),
+          SizedBox(height: 20.0),
+          Text('<sbnvgl>'),
           Text('Copyright \u00a9 2022 All rights reserved'),
         ],
       ),
@@ -50,21 +60,18 @@ class ContactButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(10),
-      focusColor: Colors.red,
-      highlightColor: Colors.yellow,
-      splashColor: Colors.green,
-      child: Container(
-        margin: EdgeInsets.all(10),
-        height: 100.0,
-        width: 100.0,
-        color: Colors.white,
-        child: Icon(
-          icon,
-          size: 48.0,
-        ),
+    return Container(
+      height: 60,
+      width: 60,
+      margin: EdgeInsets.all(12.0),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        border: Border.all(color: Colors.black45,width: 2.0),
+      ),
+      child: IconButton(
+        onPressed: onTap,
+        icon: Icon(icon),
+        iconSize: 28,
       ),
     );
   }

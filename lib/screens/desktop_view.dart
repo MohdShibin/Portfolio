@@ -15,9 +15,6 @@ class DesktopView extends StatefulWidget {
 class _DesktopViewState extends State<DesktopView> {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
-    var screenHeight =
-        screenSize.height > 600 ? screenSize.height * 0.93 : 600.0;
     // return SingleChildScrollView(
     //   child: Column(
     //     children: [
