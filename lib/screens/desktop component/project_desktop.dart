@@ -27,13 +27,9 @@ class ProjectDesktop extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(
-              'PROJECTS',
-              style: kHeadingTextStyle,
-            ),
             Expanded(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ProjectTile(
                     icon: FontAwesomeIcons.github,
@@ -42,6 +38,34 @@ class ProjectDesktop extends StatelessWidget {
                   ProjectTile(
                     icon: FontAwesomeIcons.github,
                     imgLoc: 'lms.png',
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'What i did\n',
+                        style: kHeadingTextStyle,
+                      ),
+                      Text(
+                        'What special about me',
+                        style: TextStyle(fontSize: 22.0),
+                      ),
+                      Text(
+                        'is that i know how to apply',
+                        style: TextStyle(fontSize: 22.0),
+                      ),
+                      Text(
+                        'what i have learned',
+                        style: TextStyle(fontSize: 22.0),
+                      ),
+                      SizedBox(
+                        height: 100,
+                      ),
+                    ],
                   ),
                 ],
               ),

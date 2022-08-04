@@ -15,4 +15,5 @@ TextStyle kHeadingTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 32.0,
   letterSpacing: 1.5,
+  color: Color(0xffdc2430),
 );

@@ -22,7 +22,7 @@ class SkillTile extends StatelessWidget {
         width: 180.0,
         height: 210.0,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(12),
           color: kPrimaryColor,
           boxShadow: [
             BoxShadow(

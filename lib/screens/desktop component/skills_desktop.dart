@@ -16,71 +16,85 @@ class SkillsDesktop extends StatelessWidget {
           horizontal: screenSize.width / 8.0,
           vertical: 40.0,
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'MY TECHSTACK',
-              style: kHeadingTextStyle,
-            ),
             Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              flex: 1,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SkillTile(
-                    imgLoc: 'coding.jpg',
-                    title: 'CODING',
-                    subTitle: 'subtitle',
-                    starCount: '*  *  *  *',
+                  Text(
+                    'What i good with\n',
+                    style: kHeadingTextStyle,
                   ),
-                  SkillTile(
-                    imgLoc: 'Flutter.jpg',
-                    title: 'FLUTTER',
-                    subTitle: 'subtitle',
-                    starCount: '*  *  *  *',
+                  Text(
+                    'I always likes to learn \nnew things and \nit never exhaust me',
+                    style: TextStyle(
+                      fontSize: 22.0
+                    ),
                   ),
-                  SkillTile(
-                    imgLoc: 'Web.jpg',
-                    title: 'WEB',
-                    subTitle: 'subtitle',
-                    starCount: '*  *  *  *',
-                  ),
-                  SkillTile(
-                    imgLoc: 'uiux.jpg',
-                    title: 'UI/UX',
-                    subTitle: 'subtitle',
-                    starCount: '*  *  *  *',
+                  SizedBox(
+                      height: 100,
                   ),
                 ],
               ),
             ),
             Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              flex: 2,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    width: 45.0,
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SkillTile(
+                          imgLoc: 'Flutter.jpg',
+                          title: 'FLUTTER',
+                          subTitle: 'subtitle',
+                          starCount: '*  *  *  *',
+                        ),
+                        SkillTile(
+                          imgLoc: 'Web.jpg',
+                          title: 'WEB',
+                          subTitle: 'subtitle',
+                          starCount: '*  *  *  *',
+                        ),
+                        SkillTile(
+                          imgLoc: 'uiux.jpg',
+                          title: 'UI/UX',
+                          subTitle: 'subtitle',
+                          starCount: '*  *  *  *',
+                        ),
+                      ],
+                    ),
                   ),
-                  SkillTile(
-                    imgLoc: 'cppjava.jpg',
-                    title: 'CPP/JAVA',
-                    subTitle: 'subtitle',
-                    starCount: '* * * *',
-                  ),
-                  SkillTile(
-                    imgLoc: 'python.jpg',
-                    title: 'PYTHON',
-                    subTitle: 'subtitle',
-                    starCount: '* * * *',
-                  ),
-                  SkillTile(
-                    imgLoc: 'design.jpg',
-                    title: 'DESIGN',
-                    subTitle: 'subtitle',
-                    starCount: '* * * *',
-                  ),
-                  SizedBox(
-                    width: 45.0,
+                  Expanded(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SkillTile(
+                          imgLoc: 'cppjava.jpg',
+                          title: 'CPP/JAVA',
+                          subTitle: 'subtitle',
+                          starCount: '* * * *',
+                        ),
+                        SkillTile(
+                          imgLoc: 'python.jpg',
+                          title: 'PYTHON',
+                          subTitle: 'subtitle',
+                          starCount: '* * * *',
+                        ),
+                        SkillTile(
+                          imgLoc: 'design.jpg',
+                          title: 'DESIGN',
+                          subTitle: 'subtitle',
+                          starCount: '* * * *',
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
