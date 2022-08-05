@@ -149,7 +149,7 @@ class _ProjectTileState extends State<ProjectTile>
                             child: FadeTransition(
                               opacity: _headTextOpacityAnimation,
                               child: Text(
-                                'Heading',
+                                'Title',
                                 style: GoogleFonts.dancingScript(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 40.0,

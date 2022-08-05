@@ -17,7 +17,7 @@ class ContactDesktop extends StatelessWidget {
       ),
       color: kSecondaryColor,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -41,7 +41,11 @@ class ContactDesktop extends StatelessWidget {
             ],
           ),
           SizedBox(height: 20.0),
-          Text('<sbnvgl>'),
+          Image.asset(
+            'crack.png',
+            fit: BoxFit.fitHeight,
+            height: 30,
+          ),
           Text('Copyright \u00a9 2022 All rights reserved'),
         ],
       ),
@@ -66,7 +70,7 @@ class ContactButton extends StatelessWidget {
       margin: EdgeInsets.all(12.0),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        border: Border.all(color: Colors.black45,width: 2.0),
+        border: Border.all(color: Colors.black45, width: 2.0),
       ),
       child: IconButton(
         onPressed: onTap,

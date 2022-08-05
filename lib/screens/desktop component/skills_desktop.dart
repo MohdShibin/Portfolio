@@ -2,6 +2,45 @@ import 'package:flutter/material.dart';
 import '../../utils/styles.dart';
 import '../../Reusable components/skill_tile.dart';
 
+List<SkillTile> skillTiles = const [
+  SkillTile(
+    imgLoc: 'Flutter.jpg',
+    title: 'FLUTTER',
+    subTitle: 'subtitle',
+    starCount: '*  *  *  *',
+  ),
+  SkillTile(
+    imgLoc: 'Web.jpg',
+    title: 'WEB',
+    subTitle: 'subtitle',
+    starCount: '*  *  *  *',
+  ),
+  SkillTile(
+    imgLoc: 'uiux.jpg',
+    title: 'UI/UX',
+    subTitle: 'subtitle',
+    starCount: '*  *  *  *',
+  ),
+  SkillTile(
+    imgLoc: 'cppjava.jpg',
+    title: 'CPP/JAVA',
+    subTitle: 'subtitle',
+    starCount: '* * * *',
+  ),
+  SkillTile(
+    imgLoc: 'python.jpg',
+    title: 'PYTHON',
+    subTitle: 'subtitle',
+    starCount: '* * * *',
+  ),
+  SkillTile(
+    imgLoc: 'design.jpg',
+    title: 'DESIGN',
+    subTitle: 'subtitle',
+    starCount: '* * * *',
+  ),
+];
+
 class SkillsDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -29,14 +68,12 @@ class SkillsDesktop extends StatelessWidget {
                     'What i good with\n',
                     style: kHeadingTextStyle,
                   ),
-                  Text(
+                  const Text(
                     'I always likes to learn \nnew things and \nit never exhaust me',
-                    style: TextStyle(
-                      fontSize: 22.0
-                    ),
+                    style: TextStyle(fontSize: 22.0),
                   ),
-                  SizedBox(
-                      height: 100,
+                  const SizedBox(
+                    height: 100,
                   ),
                 ],
               ),
@@ -50,24 +87,9 @@ class SkillsDesktop extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SkillTile(
-                          imgLoc: 'Flutter.jpg',
-                          title: 'FLUTTER',
-                          subTitle: 'subtitle',
-                          starCount: '*  *  *  *',
-                        ),
-                        SkillTile(
-                          imgLoc: 'Web.jpg',
-                          title: 'WEB',
-                          subTitle: 'subtitle',
-                          starCount: '*  *  *  *',
-                        ),
-                        SkillTile(
-                          imgLoc: 'uiux.jpg',
-                          title: 'UI/UX',
-                          subTitle: 'subtitle',
-                          starCount: '*  *  *  *',
-                        ),
+                        skillTiles[0],
+                        skillTiles[1],
+                        skillTiles[2],
                       ],
                     ),
                   ),
@@ -75,24 +97,9 @@ class SkillsDesktop extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SkillTile(
-                          imgLoc: 'cppjava.jpg',
-                          title: 'CPP/JAVA',
-                          subTitle: 'subtitle',
-                          starCount: '* * * *',
-                        ),
-                        SkillTile(
-                          imgLoc: 'python.jpg',
-                          title: 'PYTHON',
-                          subTitle: 'subtitle',
-                          starCount: '* * * *',
-                        ),
-                        SkillTile(
-                          imgLoc: 'design.jpg',
-                          title: 'DESIGN',
-                          subTitle: 'subtitle',
-                          starCount: '* * * *',
-                        ),
+                        skillTiles[3],
+                        skillTiles[4],
+                        skillTiles[5],
                       ],
                     ),
                   ),

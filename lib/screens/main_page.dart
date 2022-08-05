@@ -24,7 +24,11 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             child: Row(
               children: [
-                Text('<sbnvgl/>'),
+                Image.asset(
+                  'crack.png',
+                  fit: BoxFit.fitHeight,
+                  height: 30,
+                ),
                 Expanded(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

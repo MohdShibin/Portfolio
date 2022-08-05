@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Reusable%20components/project_tile.dart';
 import 'package:portfolio/models/project_model.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../utils/styles.dart';
-import '../../utils/constants.dart';
 
 class ProjectDesktop extends StatelessWidget {
-  List<ProjectModel> projects = [
-    ProjectModel(title: 'Pocket Piano', imageURL: 'piano.png'),
-    ProjectModel(title: 'LibPro', imageURL: 'lms.png'),
-  ];
+  
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -26,6 +21,7 @@ class ProjectDesktop extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
               child: Row(
@@ -39,7 +35,7 @@ class ProjectDesktop extends StatelessWidget {
                     icon: FontAwesomeIcons.github,
                     imgLoc: 'lms.png',
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20.0,
                   ),
                   Column(
@@ -50,20 +46,10 @@ class ProjectDesktop extends StatelessWidget {
                         'What i did\n',
                         style: kHeadingTextStyle,
                       ),
-                      Text(
-                        'What special about me',
+                      const Text(
+                        'What special about me\nis that i know how to apply\nwhat i have learned\nHere some of my work',
+                        textAlign: TextAlign.right,
                         style: TextStyle(fontSize: 22.0),
-                      ),
-                      Text(
-                        'is that i know how to apply',
-                        style: TextStyle(fontSize: 22.0),
-                      ),
-                      Text(
-                        'what i have learned',
-                        style: TextStyle(fontSize: 22.0),
-                      ),
-                      SizedBox(
-                        height: 100,
                       ),
                     ],
                   ),
