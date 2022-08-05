@@ -3,8 +3,10 @@ import 'package:portfolio/screens/desktop%20component/contact_desktop.dart';
 import 'package:portfolio/screens/desktop%20component/project_desktop.dart';
 import 'package:portfolio/screens/desktop%20component/skills_desktop.dart';
 import 'package:portfolio/screens/main_page.dart';
+import '../Reusable components/gradient_button.dart';
 import '../screens/desktop component/home_desktop.dart';
 import '../screens/desktop component/about_desktop.dart';
+import '../utils/styles.dart';
 
 class DesktopView extends StatefulWidget {
   const DesktopView({Key? key}) : super(key: key);
@@ -15,56 +17,99 @@ class DesktopView extends StatefulWidget {
 
 class _DesktopViewState extends State<DesktopView> {
   double offset = 0;
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    // return SingleChildScrollView(
-    //   child: Column(
-    //     children: [
-    //       HomeDesktop(),
-    //       AboutDesktop(),
-    //       SkillsDesktop(),
-    //     ],
-    //   ),
-    // );
-    // return ListView(
-    //   children: [
-    //       HomeDesktop(),
-    //       AboutDesktop(),
-    //       SkillsDesktop(),
-    //       ProjectDesktop(),
-    //       ContactDesktop(),
-    //   ],
-    // );
-    return NotificationListener(
-      onNotification: updateOffsetAccordingToScroll,
-      child: Stack(
-        children: [
-          //HomePage(),
-          Positioned(
-            top: -0.25 * offset,
-            child: HomeDesktop(),
-          ),
-          SingleChildScrollView(
-            child: Column(
+    return Scaffold(
+      appBar: offset > screenSize.height ? PreferredSize(
+          preferredSize: Size(screenSize.width, 1000),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+            child: Row(
               children: [
-                SizedBox(
-                  height: screenSize.height,
+                Image.asset(
+                  'crack.png',
+                  fit: BoxFit.fitHeight,
+                  height: 30,
                 ),
-                AboutDesktop(),
-                SkillsDesktop(),
-                ProjectDesktop(),
-                ContactDesktop(),
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      MenuButton(
+                        title: 'HOME',
+                      ),
+                      SizedBox(width: screenSize.width / 25),
+                      MenuButton(
+                        title: 'ABOUT',
+                      ),
+                      SizedBox(width: screenSize.width / 25),
+                      MenuButton(
+                        title: 'SKILLS',
+                      ),
+                      SizedBox(width: screenSize.width / 25),
+                      MenuButton(
+                        title: 'PROJECTS',
+                      ),
+                      SizedBox(width: screenSize.width / 25),
+                      MenuButton(
+                        title: 'CONTACT',
+                      ),
+                    ],
+                  ),
+                ),
+                GradientButton(title: 'HIRE ME', onTap: () {}),
               ],
             ),
-          ),
-        ],
+          )):null,
+      body: NotificationListener(
+        onNotification: updateOffsetAccordingToScroll,
+        child: Stack(
+          children: [
+            Positioned(
+              top: -0.25 * offset,
+              child: const HomeDesktop(),
+            ),
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: screenSize.height),
+                  const AboutDesktop(),
+                  SkillsDesktop(),
+                  ProjectDesktop(),
+                  const ContactDesktop(),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
   bool updateOffsetAccordingToScroll(ScrollNotification scrollNotification) {
     setState(() => offset = scrollNotification.metrics.pixels);
+
     return true;
+  }
+}
+
+class MenuButton extends StatelessWidget {
+  final String title;
+  const MenuButton({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {},
+      child: Text(
+        title,
+        style: kMenuTextStyle,
+      ),
+    );
   }
 }
