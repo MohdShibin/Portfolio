@@ -62,117 +62,128 @@ class _ProjectTileState extends State<ProjectTile>
     var screenSize = MediaQuery.of(context).size;
     bool isHovered = false;
 
-    return MouseRegion(
-      onEnter: (event) {
-        _controller.forward();
-      },
-      onExit: (event) {
-        _controller.reverse();
-      },
-      child: Container(
-        height: 250,
-        width: 400,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-        clipBehavior: Clip.antiAlias,
-        child: Stack(
-          children: [
-            Container(
-              height: 250,
-              width: 400,
+    return Flexible(
+      child: MouseRegion(
+        onEnter: (event) {
+          _controller.forward();
+        },
+        onExit: (event) {
+          _controller.reverse();
+        },
+        child: Container(
+          margin: EdgeInsets.all(8),
+          height: 250,
+          width: screenSize.height/2.5,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            border: Border.all(color: kSecondaryColor),
+            boxShadow: [
+            BoxShadow(
               color: kSecondaryColor,
-              child: Image.asset(
-                widget.imgLoc!,
-                fit: BoxFit.fitWidth,
-                filterQuality: FilterQuality.medium,
-              ),
-            ),
-            Positioned(
-              right: 0.0,
-              child: SizedBox(
-                height: 250,
-                width: 200,
-                child: AnimatedBuilder(
-                  animation: _rotationAnimation,
-                  builder: (context, child) {
-                    return Transform.rotate(
-                      angle: _rotationAnimation.value,
-                      alignment: Alignment.bottomLeft,
-                      child: Container(
-                        color: _colorAnimation.value,
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            Positioned(
-              child: SizedBox(
-                height: 250,
-                width: 200,
-                child: AnimatedBuilder(
-                  animation: _rotationAnimation,
-                  builder: (context, child) {
-                    return Transform.rotate(
-                      angle: _rotationAnimation.value,
-                      alignment: Alignment.topRight,
-                      child: Container(
-                        color: _colorAnimation.value,
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  AnimatedBuilder(
-                      animation: _headTextOpacityAnimation,
-                      builder: (context, child) {
-                        return Container(
-                          height: 80.0,
-                          alignment: Alignment(
-                              0.0, _headTextOpacityAnimation.value - 1.1),
-                          child: FadeTransition(
-                            opacity: _headTextOpacityAnimation,
-                            child: Text(
-                              'Heading',
-                              style: GoogleFonts.dancingScript(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 40.0,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        );
-                      }),
-                  AnimatedBuilder(
-                      animation: _subTextOpacityAnimation,
-                      builder: (context, child) {
-                        return Container(
-                          height: 120.0,
-                          alignment: Alignment(
-                              0.0, _subTextOpacityAnimation.value - 1.1),
-                          child: FadeTransition(
-                            opacity: _subTextOpacityAnimation,
-                            child: SizedBox(
-                              width: width - 100,
-                              child: Icon(
-                                widget.icon,
-                                color: Colors.white,
-                                size: 48.0,
-                              ),
-                            ),
-                          ),
-                        );
-                      }),
-                ],
-              ),
+              spreadRadius: 2.0,
+              blurRadius: 4.0,
             ),
           ],
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: Stack(
+            children: [
+              Container(
+                height: 250,
+                width: screenSize.height/2.5,
+                color: kPrimaryColor,
+                child: Image.asset(
+                  widget.imgLoc!,
+                  fit: BoxFit.fitWidth,
+                  filterQuality: FilterQuality.medium,
+                ),
+              ),
+              Positioned(
+                right: 0.0,
+                child: SizedBox(
+                  height: 250,
+                  width: screenSize.height/2.5,
+                  child: AnimatedBuilder(
+                    animation: _rotationAnimation,
+                    builder: (context, child) {
+                      return Transform.rotate(
+                        angle: _rotationAnimation.value,
+                        alignment: Alignment.bottomLeft,
+                        child: Container(
+                          color: _colorAnimation.value,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+              Positioned(
+                child: SizedBox(
+                  height: 250,
+                  width: screenSize.height/2.5,
+                  child: AnimatedBuilder(
+                    animation: _rotationAnimation,
+                    builder: (context, child) {
+                      return Transform.rotate(
+                        angle: _rotationAnimation.value,
+                        alignment: Alignment.topRight,
+                        child: Container(
+                          color: _colorAnimation.value,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AnimatedBuilder(
+                        animation: _headTextOpacityAnimation,
+                        builder: (context, child) {
+                          return Container(
+                            height: 80.0,
+                            alignment: Alignment(
+                                0.0, _headTextOpacityAnimation.value - 1.1),
+                            child: FadeTransition(
+                              opacity: _headTextOpacityAnimation,
+                              child: Text(
+                                'Heading',
+                                style: GoogleFonts.dancingScript(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 40.0,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          );
+                        }),
+                    AnimatedBuilder(
+                        animation: _subTextOpacityAnimation,
+                        builder: (context, child) {
+                          return Container(
+                            height: 120.0,
+                            alignment: Alignment(
+                                0.0, _subTextOpacityAnimation.value - 1.1),
+                            child: FadeTransition(
+                              opacity: _subTextOpacityAnimation,
+                              child: SizedBox(
+                                width: width - 100,
+                                child: Icon(
+                                  widget.icon,
+                                  color: Colors.white,
+                                  size: 48.0,
+                                ),
+                              ),
+                            ),
+                          );
+                        }),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
