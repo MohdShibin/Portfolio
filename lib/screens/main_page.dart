@@ -16,58 +16,59 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: kPrimaryColor,
-      appBar: PreferredSize(
-          preferredSize: Size(screenSize.width, 1000),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-            child: Row(
-              children: [
-                Image.asset(
-                  'crack.png',
-                  fit: BoxFit.fitHeight,
-                  height: 30,
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      MenuButton(
-                        title: 'HOME',
-                      ),
-                      SizedBox(width: screenSize.width / 25),
-                      MenuButton(
-                        title: 'ABOUT',
-                      ),
-                      SizedBox(width: screenSize.width / 25),
-                      MenuButton(
-                        title: 'SKILLS',
-                      ),
-                      SizedBox(width: screenSize.width / 25),
-                      MenuButton(
-                        title: 'PROJECTS',
-                      ),
-                      SizedBox(width: screenSize.width / 25),
-                      MenuButton(
-                        title: 'CONTACT',
-                      ),
-                    ],
-                  ),
-                ),
-                GradientButton(title: 'HIRE ME', onTap: () {}),
-              ],
-            ),
-          )),
-      body: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-          if (constraints.maxWidth > 715.0) {
-            return DesktopView();
-          } else {
-            return MobileView();
-          }
-        },
-      ),
+    return Material(
+    //   backgroundColor: kPrimaryColor,
+    // appBar: PreferredSize(
+    //     preferredSize: Size(screenSize.width, 1000),
+    //     child: Padding(
+    //       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+    //       child: Row(
+    //         children: [
+    //           Image.asset(
+    //             'crack.png',
+    //             fit: BoxFit.fitHeight,
+    //             height: 30,
+    //           ),
+    //           Expanded(
+    //             child: Row(
+    //               mainAxisAlignment: MainAxisAlignment.center,
+    //               children: [
+    //                 MenuButton(
+    //                   title: 'HOME',
+    //                 ),
+    //                 SizedBox(width: screenSize.width / 25),
+    //                 MenuButton(
+    //                   title: 'ABOUT',
+    //                 ),
+    //                 SizedBox(width: screenSize.width / 25),
+    //                 MenuButton(
+    //                   title: 'SKILLS',
+    //                 ),
+    //                 SizedBox(width: screenSize.width / 25),
+    //                 MenuButton(
+    //                   title: 'PROJECTS',
+    //                 ),
+    //                 SizedBox(width: screenSize.width / 25),
+    //                 MenuButton(
+    //                   title: 'CONTACT',
+    //                 ),
+    //               ],
+    //             ),
+    //           ),
+    //           GradientButton(title: 'HIRE ME', onTap: () {}),
+    //         ],
+    //       ),
+    //     )),
+    child:  LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        if (constraints.maxWidth > 715.0) {
+          return DesktopView();
+        } else {
+          return MobileView();
+        }
+      },
+    ),
+    // child: DesktopView(),
     );
   }
 }

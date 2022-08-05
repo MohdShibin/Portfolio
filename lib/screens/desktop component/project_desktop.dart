@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio/Reusable%20components/project_tile.dart';
 import 'package:portfolio/models/project_model.dart';
+import '../../utils/constants.dart';
 import '../../utils/styles.dart';
 
 class ProjectDesktop extends StatelessWidget {
@@ -11,9 +12,10 @@ class ProjectDesktop extends StatelessWidget {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight =
         screenSize.height > 600 ? screenSize.height * 0.92 : 600.0;
-    return SizedBox(
+    return Container(
       height: screenHeight,
       width: screenSize.width,
+      color: kPrimaryColor,
       child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: screenSize.width / 8.0,

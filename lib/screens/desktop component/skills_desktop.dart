@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../utils/constants.dart';
 import '../../utils/styles.dart';
 import '../../Reusable components/skill_tile.dart';
 
@@ -47,9 +48,10 @@ class SkillsDesktop extends StatelessWidget {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight =
         screenSize.height > 600 ? screenSize.height * 0.92 : 600.0;
-    return SizedBox(
+    return Container(
       height: screenHeight,
       width: screenSize.width,
+      color: kPrimaryColor,
       child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: screenSize.width / 8.0,

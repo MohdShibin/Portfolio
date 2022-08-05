@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/utils/constants.dart';
 import '../../Reusable components/gradient_button.dart';
 import '../../utils/styles.dart';
 
@@ -10,9 +11,10 @@ class AboutDesktop extends StatelessWidget {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight =
         screenSize.height > 800 ? screenSize.height * 0.93 : 800.0;
-    return SizedBox(
+    return Container(
       height: screenHeight,
       width: screenSize.width,
+      color: kPrimaryColor,
       child: Row(
         children: [
           Expanded(
