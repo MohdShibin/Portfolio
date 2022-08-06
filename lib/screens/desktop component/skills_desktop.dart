@@ -67,12 +67,12 @@ class SkillsDesktop extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'What i good with\n',
+                    'WHAT I \nGOOD WITH !\n',
                     style: kHeadingTextStyle,
                   ),
-                  const Text(
+                  Text(
                     'I always likes to learn \nnew things and \nit never exhaust me',
-                    style: TextStyle(fontSize: 22.0),
+                    style: kDescriptionTextStyle
                   ),
                   const SizedBox(
                     height: 100,

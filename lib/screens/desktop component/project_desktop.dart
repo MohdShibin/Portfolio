@@ -45,13 +45,13 @@ class ProjectDesktop extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'What i did\n',
+                        'WHAT I DID !\n',
                         style: kHeadingTextStyle,
                       ),
-                      const Text(
+                      Text(
                         'What special about me\nis that i know how to apply\nwhat i have learned\nHere some of my work',
                         textAlign: TextAlign.right,
-                        style: TextStyle(fontSize: 22.0),
+                        style: kDescriptionTextStyle
                       ),
                     ],
                   ),

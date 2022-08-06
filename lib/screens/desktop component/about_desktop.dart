@@ -40,9 +40,7 @@ class AboutDesktop extends StatelessWidget {
                 ),
                 Text(
                   'I am Shibin,\nPursuing B.tech Computer Science and Engineering\nWith Honours in Machine Learning.\n\n',
-                  style: TextStyle(
-                    fontSize: 18.0,
-                  ),
+                  style: kDescriptionTextStyle,
                 ),
                 GradientButton(title: 'Download CV', onTap: () {}),
               ],
