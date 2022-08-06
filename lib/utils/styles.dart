@@ -17,3 +17,8 @@ TextStyle kHeadingTextStyle = GoogleFonts.play(
   letterSpacing: 1.5,
   color: const Color(0xffdc2430),
 );
+
+TextStyle kDescriptionTextStyle = GoogleFonts.play(
+  fontSize: 22.0,
+  
+);

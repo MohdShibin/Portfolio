@@ -25,11 +25,17 @@ class _DesktopViewState extends State<DesktopView> {
     super.initState();
   }
 
+  void onTap(offset) {
+    _scrollController.animateTo(offset,
+        duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
-      appBar: offset > screenSize.height
+      appBar: offset >= screenSize.height
           ? PreferredSize(
               preferredSize: Size(screenSize.width, 1000),
               child: Padding(
@@ -46,24 +52,29 @@ class _DesktopViewState extends State<DesktopView> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const MenuButton(
+                          MenuButton(
                             title: 'HOME',
+                            onTap: () => onTap(0),
                           ),
                           SizedBox(width: screenSize.width / 25),
-                          const MenuButton(
+                          MenuButton(
                             title: 'ABOUT',
+                            onTap: () => onTap(screenSize.height * 1.1),
                           ),
                           SizedBox(width: screenSize.width / 25),
-                          const MenuButton(
+                          MenuButton(
                             title: 'SKILLS',
+                            onTap: () => onTap(screenSize.height*2),
                           ),
                           SizedBox(width: screenSize.width / 25),
-                          const MenuButton(
+                          MenuButton(
                             title: 'PROJECTS',
+                            onTap: () => onTap(screenSize.height*3),
                           ),
                           SizedBox(width: screenSize.width / 25),
-                          const MenuButton(
+                          MenuButton(
                             title: 'CONTACT',
+                            onTap: () => onTap(screenSize.height*3.5),
                           ),
                         ],
                       ),
@@ -101,22 +112,24 @@ class _DesktopViewState extends State<DesktopView> {
 
   bool updateOffsetAccordingToScroll(ScrollNotification scrollNotification) {
     setState(() => offset = scrollNotification.metrics.pixels);
-
     return true;
   }
 }
 
 class MenuButton extends StatelessWidget {
   final String title;
-  const MenuButton({
+  VoidCallback onTap;
+
+  MenuButton({
     Key? key,
     required this.title,
+    required this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Text(
         title,
         style: kMenuTextStyle,
