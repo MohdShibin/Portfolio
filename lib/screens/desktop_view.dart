@@ -17,52 +17,62 @@ class DesktopView extends StatefulWidget {
 
 class _DesktopViewState extends State<DesktopView> {
   double offset = 0;
+  late ScrollController _scrollController;
+
+  @override
+  void initState() {
+    _scrollController = ScrollController();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: offset > screenSize.height ? PreferredSize(
-          preferredSize: Size(screenSize.width, 1000),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
-            child: Row(
-              children: [
-                Image.asset(
-                  'crack.png',
-                  fit: BoxFit.fitHeight,
-                  height: 30,
+      appBar: offset > screenSize.height
+          ? PreferredSize(
+              preferredSize: Size(screenSize.width, 1000),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'crack.png',
+                      fit: BoxFit.fitHeight,
+                      height: 30,
+                    ),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const MenuButton(
+                            title: 'HOME',
+                          ),
+                          SizedBox(width: screenSize.width / 25),
+                          const MenuButton(
+                            title: 'ABOUT',
+                          ),
+                          SizedBox(width: screenSize.width / 25),
+                          const MenuButton(
+                            title: 'SKILLS',
+                          ),
+                          SizedBox(width: screenSize.width / 25),
+                          const MenuButton(
+                            title: 'PROJECTS',
+                          ),
+                          SizedBox(width: screenSize.width / 25),
+                          const MenuButton(
+                            title: 'CONTACT',
+                          ),
+                        ],
+                      ),
+                    ),
+                    GradientButton(title: 'HIRE ME', onTap: () {}),
+                  ],
                 ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      MenuButton(
-                        title: 'HOME',
-                      ),
-                      SizedBox(width: screenSize.width / 25),
-                      MenuButton(
-                        title: 'ABOUT',
-                      ),
-                      SizedBox(width: screenSize.width / 25),
-                      MenuButton(
-                        title: 'SKILLS',
-                      ),
-                      SizedBox(width: screenSize.width / 25),
-                      MenuButton(
-                        title: 'PROJECTS',
-                      ),
-                      SizedBox(width: screenSize.width / 25),
-                      MenuButton(
-                        title: 'CONTACT',
-                      ),
-                    ],
-                  ),
-                ),
-                GradientButton(title: 'HIRE ME', onTap: () {}),
-              ],
-            ),
-          )):null,
+              ))
+          : null,
       body: NotificationListener(
         onNotification: updateOffsetAccordingToScroll,
         child: Stack(
@@ -72,6 +82,7 @@ class _DesktopViewState extends State<DesktopView> {
               child: const HomeDesktop(),
             ),
             SingleChildScrollView(
+              controller: _scrollController,
               child: Column(
                 children: [
                   SizedBox(height: screenSize.height),
