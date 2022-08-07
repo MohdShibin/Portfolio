@@ -124,77 +124,115 @@ class HomeDesktop extends StatelessWidget {
 //   }
 // }
 
+    // return Container(
+    //   height: screenHeight,
+    //   width: screenSize.width,
+    //   color: kPrimaryColor,
+    //   child: Row(
+    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //     children: [
+    //       buildSocialButtons(),
+    //       Stack(
+    //         clipBehavior: Clip.hardEdge,
+    //         children: [
+    //           SizedBox(
+    //             width: 600,
+    //             child: Row(
+    //               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    //               children: [
+    //                 Container(
+    //                   width: 80,
+    //                   color: kSecondaryColor,
+    //                 ),
+    //                 Container(
+    //                   width: 80,
+    //                   color: kSecondaryColor,
+    //                 ),
+    //               ],
+    //             ),
+    //           ),
+    //           Center(
+    //             child: SizedBox(
+    //               width: 600,
+    //               height: 600,
+    //               child: Image.asset('profile.png', fit: BoxFit.contain),
+    //             ),
+    //           ),
+    //         ],
+    //       ),
+    //       SizedBox(
+    //         width: 64.0,
+    //       )
+    //     ],
+    //   ),
+    // );
+
     return Container(
       height: screenHeight,
       width: screenSize.width,
       color: kPrimaryColor,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Stack(
         children: [
-          buildSocialButtons(),
-          Stack(
-            clipBehavior: Clip.hardEdge,
-            children: [
-              SizedBox(
-                width: 600,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      width: 80,
-                      color: kSecondaryColor,
-                    ),
-                    Container(
-                      width: 80,
-                      color: kSecondaryColor,
-                    ),
-                  ],
-                ),
-              ),
-              Center(
-                child: SizedBox(
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Image.asset('crack.png', fit: BoxFit.fitHeight, height: 30),
+          ),
+          Positioned(child: buildSocialButtons(), bottom: 0),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
                   width: 600,
-                  height: 600,
+                  height: 450,
                   child: Image.asset('splash1.png', fit: BoxFit.contain),
                 ),
-              ),
-            ],
+                Text(
+                  '\n____HOLA.I AM____\n',
+                  style: GoogleFonts.play(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  softWrap: true,
+                ),
+                Text(
+                  'MOHAMMED SHIBIN V',
+                  style: GoogleFonts.play(
+                    fontSize: 32.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  softWrap: true,
+                ),
+              ],
+            ),
           ),
-          SizedBox(
-            width: 64.0,
-          )
         ],
       ),
     );
   }
 }
 
-Widget buildSocialButtons() => Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          buildSocialButton(icon: FontAwesomeIcons.linkedinIn, onClicked: () {}),
-          buildSocialButton(icon: FontAwesomeIcons.github, onClicked: () {}),
-          buildSocialButton(icon: Icons.mail_rounded, onClicked: () {}),
-        ],
-      ),
+Widget buildSocialButtons() => Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        buildSocialButton(icon: FontAwesomeIcons.linkedinIn, onClicked: () {}),
+        buildSocialButton(icon: FontAwesomeIcons.github, onClicked: () {}),
+        buildSocialButton(icon: Icons.mail_rounded, onClicked: () {}),
+      ],
     );
 
 Widget buildSocialButton({
   required IconData icon,
   required VoidCallback onClicked,
 }) =>
-    InkWell(
-      child: Container(
-        width: 64,
-        height: 64,
-        child: Center(
-          child: FaIcon(
-            icon,
-            size: 36,
-            color: Colors.black,
-          ),
+    Padding(
+      padding: const EdgeInsets.only(left: 20, bottom: 20),
+      child: IconButton(
+        icon: FaIcon(
+          icon,
+          size: 28,
+          color: Colors.black,
         ),
+        onPressed: onClicked,
       ),
-      onTap: onClicked,
     );
